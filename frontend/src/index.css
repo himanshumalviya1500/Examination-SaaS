@@ -50,10 +50,17 @@ html {
   cursor: pointer;
 }
 
+/* h1, h2, h3, h4, h5 {
+  font-family: 'Viga', sans-serif;
+}
+
+p, span, a {
+  font-family: 'Oxygen', sans-serif;
+} */
+
 body {
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(to top, #ebbba7 0%, #cfc7f8 100%);
 }
 
 .hero {
@@ -79,6 +86,7 @@ body {
   user-select: none !important;
   pointer-events: none !important;
 }
+/* media queries */
 
 @media (min-width: 768px) {
   .dashboard {

@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import Login from "../logIn/Login";
-import Signup from "../signUp/Signup";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ProtectedRoute from "../protectedRoute/ProtectedRoute";
-import StudentDashboard from "../dashboard/Dashboard";
-import TeacherDashboard from "../Teacher/Dashboard/Dashboard";
-import AttemptTest from "../attemptTest/AttemptTest";
-import Navbar from "../navbar";
-import Result from "../result/ResultWrapper";
-import TestInstruction from "../TestInstructions/TestInstruction";
-import IndividualResult from "../result/ShowResult";
-import TestPreviewWrapper from "../testPreview/TestPreviewWrapper";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import StudentDashboard from "../Pages/Dashboard/Dashboard";
+import TeacherDashboard from "../Pages/Teacher/Dashboard/Dashboard";
+import AttemptTest from "../Pages/AttemptTest/AttemptTest";
+import Navbar from "../Pages/Navbar";
+import Result from "../Pages/Result/ResultWrapper";
+import TestInstruction from "../Pages/TestInstructions/TestInstruction";
+import IndividualResult from "../Pages/Result/ShowResult";
+import TestPreviewWrapper from "../Pages/TestPreview/TestPreviewWrapper";
 import { connect } from "react-redux";
-import Profile from "../profile/Profile";
+import { Modal } from "antd";
+import Profile from "../Pages/Profile/Profile";
 import { Roles } from "../Roles/roles";
-import CreateTest from "../Teacher/CreateTest/CreateTest";
-import AssignedTestsWrapper from "../Teacher/AssigenedTest/AssignedTestsWrapper";
-import TestStatus from "../Teacher/TestStatus/TestStatus";
+import CreateTest from "../Pages/Teacher/CreateTest/CreateTest";
+import AssignedTestsWrapper from "../Pages/Teacher/AssigenedTest/AssignedTestsWrapper";
+import TestStatus from "../Pages/Teacher/TestStatus/TestStatus";
 import { message } from "antd";
 import { Offline } from "react-detect-offline";
+import Login from "../Pages/LogIn/Login";
+import Signup from "../Pages/SignUp/Signup";
 
 function App(props) {
   const [count, setCount] = useState(1);
@@ -47,6 +48,7 @@ function App(props) {
 
   const { selectedTestName, selectedAssignedTestName } = props;
   const role = props.userInfo.role;
+  const { confirm } = Modal;
 
   return (
     <div className={count % 2 ? "" : "pointer__select__none"}>
@@ -122,13 +124,14 @@ function App(props) {
 }
 
 const mapStateToProps = (state) => ({
-  selectedTestName: state.selectedTest.selectedTestResultData.testName
+  selectedTestName: state.selectedTest.selectedTestResultData?.[0]?.testName
     ?.replace(/\s+/g, "-")
     .toLowerCase(),
   userInfo: state.auth.user,
-  selectedAssignedTestName: state.selectedTest.selectedAssignedTestData.testName
-    ?.replace(/\s+/g, "-")
-    .toLowerCase(),
+  selectedAssignedTestName:
+    state.selectedTest.selectedAssignedTestData?.[0]?.testName
+      ?.replace(/\s+/g, "-")
+      .toLowerCase(),
 });
 
 export default connect(mapStateToProps)(App);
