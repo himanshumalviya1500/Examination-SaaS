@@ -9,6 +9,7 @@ const cors = require('cors');
 var path = require("path");
 require('dotenv').config()
 
+// Initiate Mongo Server
 InitiateMongoServer();
 
 const app = express();
@@ -21,6 +22,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors());
 
+app.use("/user", user);
 app.use("/teacher", teacher);
 app.use("/student", student);
 
