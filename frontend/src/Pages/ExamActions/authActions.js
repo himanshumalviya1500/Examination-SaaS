@@ -114,7 +114,7 @@ const userAccountCreated = () => {
   };
 };
 
-export const loginUser = (values) => (dispatch) => {
+export const loginUser = (values) => async (dispatch) => {
   dispatch(requestLogin());
 
   const requestOptions = {
@@ -123,25 +123,36 @@ export const loginUser = (values) => (dispatch) => {
       "Content-Type": "application/json",
       Authorization: localStorage.getItem("token"),
     },
-
     body: JSON.stringify(values),
   };
 
-  fetch("/user/login", requestOptions)
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.token) {
-        localStorage.setItem("token", `Bearer ${data.token}`);
-        localStorage.setItem("userProfile", JSON.stringify(data.payload.user));
-        localStorage.setItem("profileID", data.payload.profileID);
-        dispatch(receiveLogin(data.payload.user, data.payload.profileID));
-        // navigate("/studentHome");
-      }
-    })
-    .catch((error) => {
-      //Do something with the error if you want!
+  try {
+    const response = await fetch("/user/login", requestOptions);
+
+    // Ensure the response is in JSON format
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const data = await response.json();
+
+    if (data.token) {
+      localStorage.setItem("token", `Bearer ${data.token}`);
+      localStorage.setItem("userProfile", JSON.stringify(data.payload.user));
+      localStorage.setItem("profileID", data.payload.profileID);
+      dispatch(receiveLogin(data.payload.user, data.payload.profileID));
+      // navigate("/studentHome");
+    } else if (data.errors) {
+      // Handle validation errors
+      data.errors.forEach((error) => {
+        console.error(`${error.param}: ${error.msg}`);
+      });
       dispatch(loginError());
-    });
+    }
+  } catch (error) {
+    console.error("Request failed", error);
+    dispatch(loginError());
+  }
 };
 
 export const signUpUser = (values) => (dispatch) => {
