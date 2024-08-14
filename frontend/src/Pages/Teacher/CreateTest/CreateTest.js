@@ -140,7 +140,7 @@ class CreateTest extends Component {
       <>
         <Row justify="center" align="middle">
           <Col xs={22} sm={22} md={10} lg={10} className="signup__container">
-            <p className="sub-title__signup"> 🎓 Create Test</p>
+            <p className="sub-title__signup"> 👩🏻‍🎓 Create Test</p>
             <Form
               name="basic"
               className="create__test__form"

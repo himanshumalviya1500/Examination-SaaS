@@ -28,7 +28,7 @@ const TestUploadPage = () => {
   };
 
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection:'column', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
       <h2>Upload Test from Excel</h2>
       <ExcelUpload onFileUpload={handleFileUpload} />
     </div>

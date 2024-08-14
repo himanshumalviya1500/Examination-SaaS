@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Row,
-  Col,
-  Form,
-  Input,
-  Button,
-  Select,
-  notification,
-} from "antd";
+import { Row, Col, Form, Input, Button, Select, notification } from "antd";
 import "./Signup.css";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
@@ -56,7 +48,7 @@ function Signup(props) {
     <>
       <Row justify="center" align="middle" className="hero">
         <Col xs={22} sm={22} md={8} lg={8} className="signup__container">
-          <p className="sub-title__signup">🎓 EMS</p>
+          <p className="sub-title__signup">👩🏻‍🎓 Exam</p>
           <Form
             name="basic"
             initialValues={{

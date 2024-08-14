@@ -54,17 +54,10 @@ class Profile extends Component {
             <div className="avatar-wrapper">
               <Avatar
                 size={{ xs: 80, sm: 80, md: 80, lg: 80, xl: 90, xxl: 100 }}
-                src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                src="https://static.vecteezy.com/system/resources/thumbnails/002/002/403/small/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
                 className="avatar-image"
               />
               <Popover content={this.state.isVerified ? verfied : notVerfied}>
-                <img
-                  src={
-                    this.state.isVerified ? "/verified.png" : "/notVerified.png"
-                  }
-                  alt="verification"
-                  className="verified"
-                />
               </Popover>
               <p
                 className="profile__heading"

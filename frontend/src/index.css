@@ -50,17 +50,11 @@ html {
   cursor: pointer;
 }
 
-/* h1, h2, h3, h4, h5 {
-  font-family: 'Viga', sans-serif;
-}
-
-p, span, a {
-  font-family: 'Oxygen', sans-serif;
-} */
-
 body {
   margin: 0;
   padding: 0;
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);  
 }
 
 .hero {

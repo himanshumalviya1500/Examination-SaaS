@@ -28,7 +28,7 @@ function Login(props) {
     <>
       <Row justify="center" align="middle" className="hero">
         <Col xs={22} sm={22} md={6} lg={6} className="signin__container">
-          <p className="sub-title">🎓 EMS</p>
+          <p className="sub-title">👩🏻‍🎓 Exam</p>
 
           <Form
             name="basic"
