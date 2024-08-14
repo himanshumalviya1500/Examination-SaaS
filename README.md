@@ -37,10 +37,6 @@ Here're some of the project's best features:
 * **View Registered Classes**: Provides teachers with a comprehensive view of all registered classes in the system.
 * **View Student Test Attempts**: Teachers can access detailed records of which students have attempted specific tests.
 * **View Student Performance Analysis**: Teachers can view a detailed analysis of students' performance, including scores and statistical insights.
-* **Resumable Tests**: Supports the ability for students to pause and resume tests, ensuring that progress is saved in case of interruptions.
-* **Test Countdown Timer**: Automatically manages the test duration, enforcing time limits and auto-submitting responses when time expires.
-* **Auto-Submit Tests**: Ensures that tests are automatically submitted when the allocated time ends, preventing students from continuing after the deadline.
-* **One Attempt Per Test**: Restricts students to a single attempt per test, ensuring fairness and preventing multiple attempts.
 * **Warning Popup on No Internet Connection**: Notifies users with a warning popup if their internet connection is lost during an active session.
 * **Disable Pointer Events on Offline Connection**: Disables interactions when the system detects an offline status, preventing unintended actions until the connection is restored.
 * **View Student Profiles**: Allows teachers to access and manage individual student profiles, including personal and academic information.
