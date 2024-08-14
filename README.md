@@ -7,7 +7,7 @@
 <h2>🧐 Features</h2>
 
 Here're some of the project's best features:
-## Frontend Features
+## Students Features
 
 * **Sign Up**: Allows students to create an account in the system.
 * **Sign In**: Enables students to log into their accounts to access the platform.
@@ -26,13 +26,13 @@ Here're some of the project's best features:
 * **Warning Popup on No Internet Connection**: Alerts students with a warning message if the internet connection is lost during a test.
 * **Disable Pointer Events on Offline Connection**: Disables pointer events when the connection is offline, preventing students from interacting with the test until they are back online.
 
-## Backend Features
+## Teachers Features
 
 * **Sign Up**: Implements secure account creation for both teachers and students.
 * **Sign In**: Authenticates users, allowing them to securely log in with their credentials.
 * **Sign Out**: Provides secure sign-out functionality, ensuring that users' sessions are properly terminated.
 * **Create Tests**: Enables teachers to create and customize tests for students, including questions, options, and correct answers.
-* **Assign Tests to Students**: Allows teachers to assign created tests to specific classes or sections, ensuring targeted distribution.
+* **Assign Tests to Students**: Allows teachers to assign created tests to specific classes or sections, ensuring targeted distribution also use excel to assign.
 * **View Assigned Tests**: Teachers can view all tests they have assigned, organized by class and section.
 * **View Registered Classes**: Provides teachers with a comprehensive view of all registered classes in the system.
 * **View Student Test Attempts**: Teachers can access detailed records of which students have attempted specific tests.
